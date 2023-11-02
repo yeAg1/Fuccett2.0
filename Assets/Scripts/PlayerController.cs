@@ -16,12 +16,20 @@ public class PlayerController : MonoBehaviour
     public LayerMask attackLayers;
     Vector2 moveInput;
     TouchingDirection td;
-
-
+    private Damageable damageable;
     Rigidbody2D rb;
     Animator animator;
 
-   
+    public bool IsHit { get 
+        { 
+            return animator.GetBool(AnimationStrings.isHit); 
+        } 
+        set 
+        { 
+            animator.SetBool(AnimationStrings.isHit, value); 
+        } 
+    }
+
 
     public bool CanMove { get 
         { 
@@ -32,6 +40,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         td = GetComponent<TouchingDirection>();
+        damageable = GetComponent <Damageable>();
     }
 
     private bool isMoving
@@ -86,9 +95,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate(Damageable damageable)
     {
-        rb.velocity = new Vector2(moveInput.x * walkspeed, rb.velocity.y);
+        if (damageable.IsHit)
+            rb.velocity = new Vector2(moveInput.x * walkspeed, rb.velocity.y);
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
@@ -171,5 +181,11 @@ public class PlayerController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(attackDuration);
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        IsHit = true;
+        rb.velocity = new Vector2(knockback.x, knockback.y + rb.velocity.y);
     }
 }
