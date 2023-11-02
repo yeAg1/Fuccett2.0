@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 947103827249181952, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: _isMoving
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 947103827249181952, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: rollSpeed
@@ -216,11 +216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4675620055329442559, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: 4675620055329442559, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.63
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 4675620055329442559, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -261,6 +261,10 @@ PrefabInstance:
     - target: {fileID: 8053271644625113013, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: castFilter.layerMask.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234054706447022667, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
+      propertyPath: invincibilityTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8965095498502854815, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: m_NotificationBehavior
@@ -778,7 +782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483215149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4251338, y: -2.4045815, z: -7.65}
+  m_LocalPosition: {x: 2.139971, y: -2.2045815, z: -7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -898,7 +902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4251338, y: -2.4045815, z: -7.65}
+  m_LocalPosition: {x: 2.139971, y: -2.2045815, z: -7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4171,7 +4175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280911430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.18, y: -5.16, z: 0}
+  m_LocalPosition: {x: 9.22, y: -5.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4586,6 +4590,10 @@ PrefabInstance:
     - target: {fileID: 8760068932241703008, guid: 79917f099bc56e64681431282e734612, type: 3}
       propertyPath: damageableHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1691797169}
+      objectReference: {fileID: 11500000, guid: b7b29ea5fcde0024b96c5c6b279a27e4, type: 3}
+    - target: {fileID: 8760068932241703008, guid: 79917f099bc56e64681431282e734612, type: 3}
+      propertyPath: damageableHit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79917f099bc56e64681431282e734612, type: 3}

@@ -95,10 +95,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void FixedUpdate(Damageable damageable)
+    private void FixedUpdate()
     {
-        if (damageable.IsHit)
-            rb.velocity = new Vector2(moveInput.x * walkspeed, rb.velocity.y);
+        //if (damageable.IsHit)
+        rb.velocity = new Vector2(moveInput.x * walkspeed, rb.velocity.y);
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }

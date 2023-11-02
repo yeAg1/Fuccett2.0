@@ -171,6 +171,10 @@ AnimatorStateMachine:
   - {fileID: -2007004753902927604}
   m_EntryTransitions: []
   m_StateMachineTransitions:
+  - first: {fileID: -1598562156478119938}
+    second:
+    - {fileID: 7447075908777476521}
+    - {fileID: -8012062965522061501}
   - first: {fileID: 4516151092086409790}
     second:
     - {fileID: 7156385170268098760}
@@ -179,14 +183,10 @@ AnimatorStateMachine:
     second:
     - {fileID: -3014154418640928343}
     - {fileID: 6155819537901212166}
-  - first: {fileID: -1598562156478119938}
-    second:
-    - {fileID: 7447075908777476521}
-    - {fileID: -8012062965522061501}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 650, y: 260, z: 0}
   m_EntryPosition: {x: 30, y: 100, z: 0}
-  m_ExitPosition: {x: 330, y: 180, z: 0}
+  m_ExitPosition: {x: 320, y: 240, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 8509983190543092309}
 --- !u!114 &-6255072710544158194
@@ -564,49 +564,55 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isGrounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: yVelocity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Rolling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: rollTime
     m_Type: 1
     m_DefaultFloat: 0.5
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: canMove
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isAlive
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: isOnWall
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
