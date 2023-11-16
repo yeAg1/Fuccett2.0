@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 947103827249181952, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: rollDuration
-      value: 0.49
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 947103827249181952, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: _isFacingRight
@@ -263,8 +263,16 @@ PrefabInstance:
       value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 8234054706447022667, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
+      propertyPath: iFrameTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234054706447022667, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
+      propertyPath: flashNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234054706447022667, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: invincibilityTime
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8965095498502854815, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}
       propertyPath: m_NotificationBehavior
@@ -782,7 +790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483215149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.139971, y: -2.2045815, z: -7.65}
+  m_LocalPosition: {x: 2.1426318, y: -2.2045815, z: -7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -902,7 +910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.139971, y: -2.2045815, z: -7.65}
+  m_LocalPosition: {x: 2.1426318, y: -2.2045815, z: -7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4365,7 +4373,10 @@ MonoBehaviour:
       m_Calls: []
   _maxHealth: 100
   _health: 100
+  iFrameTime: 0
+  flashNumber: 0
   invincibilityTime: 0.25
+  knockbackPower: 1.5
 --- !u!1 &1691797169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4675620055329442556, guid: 7e0c75d50e074c643b94c7e66834ca00, type: 3}

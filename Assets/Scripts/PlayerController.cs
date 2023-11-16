@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     public float attackDuration = 0.5f;
     public float rollSpeed = 10f;
     public float rollDuration = 0.5f;
+    public float knockback;
+    public float knockbackTime;
+    public float knockbackLength = 0.5f;
+    public bool knockRight;
     public Transform attackPoint;
     public LayerMask attackLayers;
     Vector2 moveInput;
@@ -19,6 +23,12 @@ public class PlayerController : MonoBehaviour
     private Damageable damageable;
     Rigidbody2D rb;
     Animator animator;
+
+    private State state;
+    private enum State
+    {
+        normal, roll, knockback,
+    }
 
     public bool IsHit { get 
         { 
@@ -98,7 +108,19 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //if (damageable.IsHit)
-        rb.velocity = new Vector2(moveInput.x * walkspeed, rb.velocity.y);
+        if(knockbackTime <= 0)
+        {
+            rb.velocity = new Vector2(moveInput.x * walkspeed, rb.velocity.y);
+        }
+        else
+        {
+            if (knockRight)
+                rb.velocity = new Vector2(-knockback, knockback);
+            if (!knockRight)
+                rb.velocity = new Vector2(knockback, knockback);
+            knockbackTime -= Time.deltaTime;
+        }
+        
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
@@ -139,6 +161,7 @@ public class PlayerController : MonoBehaviour
         if (context.started && td.isGrounded)
         {
             StartCoroutine(Roll());
+            Physics2D.IgnoreLayerCollision(10, 9, false);
         }
     }
 
@@ -149,15 +172,14 @@ public class PlayerController : MonoBehaviour
         Vector2 rollDirection = isFacingRight ? Vector2.right : Vector2.left; // Get the direction player is facing
 
         // Apply an instant burst of speed
-        rb.velocity = new Vector2(rollDirection.x * rollSpeed, rb.velocity.y);
-
+        rb.AddForce(new Vector2(rb.velocity.x + 100f, rb.velocity.y), ForceMode2D.Impulse);
+        //rollDirection.x * 
         while (rollTime < rollDuration)
         {
             rollTime += Time.deltaTime;
+            Physics2D.IgnoreLayerCollision(10, 9, true);
             yield return null;
         }
-
-        rb.velocity = Vector2.zero; // Stop the player after rollDuration
         animator.SetBool("Rolling", false);
     }
 
