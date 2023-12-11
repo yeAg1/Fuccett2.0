@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: c6b05d6e899d5324bb4c943a405ace85
+  - enabled: 1
+    path: Assets/Scenes/Colliders Test Scene.unity
+    guid: 4f6de4e1b9eae2341abd1f854a9f0c4d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 546c1df1b24230742b0b6d49af5f4ac1, type: 2}
