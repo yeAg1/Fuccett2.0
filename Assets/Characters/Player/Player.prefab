@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8541364985123573056}
   - component: {fileID: 8053271644625113013}
   - component: {fileID: 8234054706447022667}
+  - component: {fileID: 8212885399209983358}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -129,6 +130,10 @@ MonoBehaviour:
   attackDuration: 0.5
   rollSpeed: 10
   rollDuration: 0.5
+  knockback: 0
+  knockbackTime: 0
+  knockbackLength: 0.5
+  knockRight: 0
   attackPoint: {fileID: 0}
   attackLayers:
     serializedVersion: 2
@@ -316,8 +321,24 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _maxHealth: 100
+  healthBar: {fileID: 0}
   _health: 100
+  iFrameTime: 0
+  flashNumber: 0
   invincibilityTime: 0.25
+  knockbackPower: 1.5
+--- !u!114 &8212885399209983358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675620055329442556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f7ff8663d3d4cb7baf1be3cbd9254f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5260542232043008405
 GameObject:
   m_ObjectHideFlags: 0
