@@ -49022,9 +49022,10 @@ GameObject:
   - component: {fileID: 138070430}
   - component: {fileID: 138070434}
   - component: {fileID: 138070433}
+  - component: {fileID: 138070435}
   m_Layer: 6
   m_Name: HMBoss
-  m_TagString: Boss
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49044,6 +49045,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3191605074533148724, guid: 445707613d1282844bbe18d9cfee4174, type: 3}
   spawnpoint: {fileID: 138070432}
   spawnCD: 4
+  maxSpawn: 5
 --- !u!212 &138070431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49156,13 +49158,34 @@ MonoBehaviour:
   damageableHit:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 500
+  _maxHealth: 480
   healthBar: {fileID: 1917994179}
-  _health: 500
+  _health: 480
   iFrameTime: 0
   flashNumber: 0
   invincibilityTime: 0.25
   knockbackPower: 1.5
+--- !u!50 &138070435
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138070429}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &435277682
 GameObject:
   m_ObjectHideFlags: 0
@@ -75394,11 +75417,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6882718330415136703, guid: 9428715de350e4a6eb438485bfac9674, type: 3}
       propertyPath: m_Value
-      value: 500
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 6882718330415136703, guid: 9428715de350e4a6eb438485bfac9674, type: 3}
       propertyPath: m_MaxValue
-      value: 500
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 8476834618622817722, guid: 9428715de350e4a6eb438485bfac9674, type: 3}
       propertyPath: m_AnchorMax.x

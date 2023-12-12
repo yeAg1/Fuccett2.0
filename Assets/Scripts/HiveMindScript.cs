@@ -9,6 +9,8 @@ public class HiveMindScript : MonoBehaviour
     public Transform spawnpoint;
     public float spawnCD = 5f;
     private float currentCD;
+    public int maxSpawn = 5;
+    private int currentSpawn = 0;   
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,17 @@ public class HiveMindScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentCD -= Time.deltaTime;
-        if(currentCD <= 0 )
+        if (currentSpawn < maxSpawn) 
         {
-            Instantiate(enemyPrefab, spawnpoint.position, spawnpoint.rotation);
-            currentCD = spawnCD;
+            currentCD -= Time.deltaTime;
+            if (currentCD <= 0)
+            {
+                Instantiate(enemyPrefab, spawnpoint.position, spawnpoint.rotation);
+                currentSpawn++;
+                currentCD = spawnCD;
+            }
+            
         }
+        
     }
 }

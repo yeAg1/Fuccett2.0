@@ -24,7 +24,11 @@ public class Damageable : MonoBehaviour
         {
             _health = value;
             if (_health <= 0)
+            {
                 IsAlive = false;
+                Destroy(gameObject, .5f);
+            }
+                
         }
     }
 
@@ -122,6 +126,8 @@ public class Damageable : MonoBehaviour
            // CharacterEvents.characterHealed?.Invoke(this, healthRestored);
         }
     }
+
+
 
     private IEnumerator Invulnerability()
     {
